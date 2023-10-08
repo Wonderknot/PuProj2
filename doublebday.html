@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Meta-Data (Info about your website for search engines) -->
+        <meta charset="UTF-8">
+        <title>Happy Birthday Double!</title>
+
+        <!-- CSS Styles -->
+        <!-- Your external css file link goes here -->
+        <link rel="stylesheet" href="style22.css">
+         </head>
+    <body>
+       <!-- Header -->
+       <header>A Very Happy Birthday From All of your Bounty Hunters! A treat awaits you if you are capable of deciphering the message below!Proudly shout the Answer in Discord!</header>
+
+      <!-- Main Content-->
+      <main> 
+        <div class="center-box">
+            <p class="center-text"><input type="password" id="passwordInput" placeholder="Enter password">
+                <button onclick="revealClue()">Submit</button>
+                <p id="morseCode" style="display: none;">... .--. . - ... -.-- .-. .- ... ... . -.-. . -. ... -.. .-. .- .-- .- . ...- .. - -. . -.-. -. .. ... .-.. ..- .- .... .-. . ...- --- .-.. .- .-. . -. . --. ... -.- .-. --- .-- . .-. .. ..-. .-.. .- -. --- .. - --- -- . ... . ... -. --- .--. ... . .-. .-.. .- .-. --- .. ...- .- .... . -... ... . .. - ..- -.. -.. . .-. -.-. .- ... ... . .. .-. . ...- .. .-.. . -.. --. -. .. -.. -. .- - ... .--. ..- .-.. . -. -. --- ... .-. . .--. .--. --- - .-. . ...- .-.. --- ...- . .-. ... ..- --- -- .-. --- -. . ... .-. --- - -.-. . ... --. -. .. -.. .- . .-..</p>
+         </div>
+      </main>
+      <!-- Footer-->
+      <footer></footer>
+      
+       <!-- JavaScripts -->
+       <script>function revealClue() {
+        var password = document.getElementById("passwordInput").value;
+        if(password == "opensesame") {
+            document.getElementById("morseCode").style.display = "block";
+        } else {
+            alert("BWAHAHAHAHAHAHAHA! No.");
+        }
+    }</script>
+     <!-- Your external JS file link goes here -->
+        
+    </body> 
+</html>

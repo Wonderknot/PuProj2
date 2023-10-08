@@ -1,0 +1,58 @@
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.0em;
+    
+    background-image: url("backdrop.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  /* header configuration */
+  header {
+    background-color: #35424a;
+    color: white;
+    padding-top:15px;  
+    min-height:15px;
+    opacity:75%; 
+    text-transform: uppercase;}
+  /* navigation bar styling */
+  nav ul {
+     padding:0; 
+     margin-left:auto; 
+     margin-right:auto; 
+     width:max-content; 
+  }  
+  nav ul li {
+   display:inline-block;   
+  } 
+  
+  nav ul li a {  
+   text-decoration:none;   
+   color:white;
+  }
+  
+  nav ul li:hover {    
+  background:#cc5d29 ;
+  }
+  
+  footer{                 /* footer customization, typical use case includes social links or copyrights significance */
+      position:absolute;
+      bottom:0;
+      height:min-content;;
+      text-align:center
+  }
+  
+  main{                     /* main content area styling - will be the place where most of your web page content resides!*/
+      max-width :700px ;
+      margin-left:auto ;      
+      margin-right:auto ;     
+      padding-top :5em ;
+  }
+  .center-text {
+    text-align: center;
+ }
+ 
+ .center-box {
+    margin: auto;
+    width: 50%;
+ }
