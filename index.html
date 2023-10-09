@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<style>
+.button {
+  border: solid;
+  color: gray;
+  padding: 15px 30px;
+  text-align: center;
+  font-size: 300%;
+  margin: 5px 5px;
+}
+
+.para {
+  color: red;
+  font-size: 500%;
+}
+
+</style>
+</head>
+
+<body>
+
+<h2> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+FINISH </h2>
+
+<table id="bridge">
+  <tr>
+    <td id="t1"><button class="button" style="padding:15px 33px;">A</button></td>
+    <td id="t2"><button class="button">B</button></td>
+    <td id="t3"><button class="button" style="padding:15px 27px;">C</button></td>
+  </tr>
+
+  <tr>
+    <td id="t4"><button class="button">O</button></td>
+    <td id="t5"><button class="button" style="padding:15px 34px;">L</button></td>
+    <td id="t6"><button class="button" style="padding:15px 27px;">D</button></td>
+  </tr>
+
+  <tr>
+    <td id="t7"><button class="button" style="padding:15px 25px;">W</button></td>
+    <td id="t8"><button class="button">E</button></td>
+    <td id="t9"><button class="button" style="padding:15px 27px;">N</button></td>
+  </tr>
+
+  <tr>
+    <td id="t10"><button class="button" style="padding:15px 32px;">H</button></td>
+    <td id="t11"><button class="button" style="padding:15px 42px;">I</button></td>
+    <td id="t12"><button class="button" style="padding:15px 29px;">P</button></td>
+  </tr>
+
+  <tr>
+    <td id="t13"><button class="button" style="padding:15px 34px;">S</button></td>
+    <td id="t14"><button class="button">Y</button></td>
+    <td id="t15"><button class="button" style="padding:15px 26px;">Q</button></td>
+  </tr>
+
+</table>
+
+<h2> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+START </h2>
+
+<p class="para" id="output"></p>
+
+<h1>Cross this Bridge you Must
+<br>Against <span style="color:red;">Consequences</span> we Trust</h1>
+
+<script>
+var passedBridge = false;
+var row1 = false;
+var row2 = false;
+var row3 = false;
+var row4 = false;
+var row5 = false;
+var xxx = 0;
+
+for(var i = 1; i < 16; i++){
+document.getElementById("t"+i).addEventListener("click", isSafe);
+}
+
+function checkBridge(){
+  if(row5)
+    if(row4)
+      if(row3)
+        if(row2)
+          if(row1)
+            passedBridge = true;
+
+if(passedBridge){
+    document.getElementById("output").innerHTML = "<span style=\"color:#00FF0C;\">YOU PASSED THE BRIDGE!</span> <button onclick=\"location.href='bday.html'\">Proceed</button>";
+}
+
+    if(xxx){
+      document.getElementById("output").innerHTML += "<br>You only died " + xxx + " times...";
+    }
+    else{
+      document.getElementById("output").innerHTML += "<span style=\"color:#00FF0C;\"><br>Inconceivable! Flawless victory!!!</span>";
+    }
+  }
+}
+
+function isSafe(){
+  switch(this.id){
+    case "t1":
+	this.innerHTML = "<button class=\"button\" style=\"padding:15px 33px; background-color:#00FF0C;\">A</button>";
+	row1 = true;
+	checkBridge();
+	break;
+
+    case "t2":
+	this.innerHTML = "<button class=\"button\" style=\"background-color:#00FF0C;\">B</button>";
+	row1 = true;
+	checkBridge();
+	break;
+
+    case "t3":
+	this.innerHTML = "<button class=\"button\" style=\"padding:15px 27px; background-color:red;\">C</button>";
+	document.getElementById("output").innerHTML += "X";
+	xxx++;
+	checkBridge();
+	break;
+
+    case "t4":
+	this.innerHTML = "<button class=\"button\" style=\"background-color:red;\">O</button>";
+	document.getElementById("output").innerHTML += "X";
+	xxx++;
+	checkBridge();
+	break;
+
+    case "t5":
+	this.innerHTML = "<button class=\"button\" style=\"padding:15px 34px; background-color:#00FF0C;\">L</button>";
+	row2 = true;
+	checkBridge();
+	break;
+
+    case "t6":
+	this.innerHTML = "<button class=\"button\" style=\"padding:15px 27px; background-color:#00FF0C;\">D</button>";
+	row2 = true;
+	checkBridge();
+	break;
+
+    case "t7":
+	this.innerHTML = "<button class=\"button\" style=\"padding:15px 25px; background-color:#00FF0C;\">W</button>";
+	row3 = true;
+	checkBridge();
+	break;
+
+    case "t8":
+	this.innerHTML = "<button class=\"button\" style=\"background-color:red;\">E</button>";
+	document.getElementById("output").innerHTML += "X";
+	xxx++;
+	checkBridge();
+	break;
+
+    case "t9":
+	this.innerHTML = "<button class=\"button\" style=\"padding:15px 27px; background-color:red;\">N</button>";
+	document.getElementById("output").innerHTML += "X";
+	xxx++;
+	checkBridge();
+	break;
+
+    case "t10":
+	this.innerHTML = "<button class=\"button\" style=\"padding:15px 32px; background-color:#00FF0C;\">H</button>";
+	row4 = true;
+	checkBridge();
+	break;
+
+    case "t11":
+	this.innerHTML = "<button class=\"button\" style=\"padding:15px 42px; background-color:#00FF0C;\">I</button>";
+	row4 = true;
+	checkBridge();
+	break;
+
+    case "t12":
+	this.innerHTML = "<button class=\"button\" style=\"padding:15px 29px; background-color:#00FF0C;\">P</button>";
+	row4 = true;
+	checkBridge();
+	break;
+
+    case "t13":
+	this.innerHTML = "<button class=\"button\" style=\"padding:15px 34px; background-color:red;\">S</button>";
+	document.getElementById("output").innerHTML += "X";
+	xxx++;
+	checkBridge();
+	break;
+
+    case "t14":
+	this.innerHTML = "<button class=\"button\" style=\"background-color:#00FF0C;\">Y</button>";
+	row5 = true;
+	checkBridge();
+	break;
+
+    case "t15":
+	this.innerHTML = "<button class=\"button\" style=\"padding:15px 26px; background-color:red;\">Q</button>";
+	document.getElementById("output").innerHTML += "X";
+	xxx++;
+	checkBridge();
+	break;
+
+    default:
+	break;
+  }
+}
+
+</script>
+</body>
+
+</html>
